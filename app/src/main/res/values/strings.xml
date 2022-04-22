@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">gestao-bootcamp-app</string>
+    <string name="mensagem_login">Faça seu Login</string>
+</resources>
