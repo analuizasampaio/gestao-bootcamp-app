@@ -18,7 +18,6 @@ RA:2100534
 
 - Nome: Kauê Ribeiro Varjão
 RA: 1904284
-Projeto para a Materia de Kotlin 
 
 
 Opção 2: 
@@ -30,14 +29,14 @@ Pode usar ideia do projeto de Engenharia de Requisitos.
 ## 👩‍💻 TODO list
 - [X] Juntem-se em grupos de até 5 alunos
 - [ ] Estabeleça um nome para o grupo
-- [ ] Crie um novo projeto de aplicativo no Android Studio
+- [X] Crie um novo projeto de aplicativo no Android Studio
   - [ ]  O nome do pacote deve ser br.com.mobile.nomegrupo
   - [ ] Troque nomegrupo pelo nome do seu grupo
   - [ ] Não use espaços, acentos ou caracteres especiais em nomegrupo
-- [ ] A primeira tela do app deve ser a tela de login:
-  - [ ] Deve conter os campos para inserir usuário e senha
-  - [ ] Um botão para fazer o login
-  - [ ] Uma imagem relacionada ao tema do app
+- [X] A primeira tela do app deve ser a tela de login:
+  - [X] Deve conter os campos para inserir usuário e senha
+  - [X] Um botão para fazer o login
+  - [X] Uma imagem relacionada ao tema do app
   - [ ]  Implementar o evento de clique no botão de login para direcionar para uma segunda tela/Activity, fazendo a verificação de usuário e senha
     - [ ] Só poderá direcionar se usuário for ‘aluno’ e senha ‘impacta’ (tudo minúsculo)
     - [ ] Caso usuário e senha forem inválidos, deve mostrar um campo de texto na tela de login com a mensagem “Usuário ou senha incorretos” (você pode colocar algum componente de alerta, se preferir)
