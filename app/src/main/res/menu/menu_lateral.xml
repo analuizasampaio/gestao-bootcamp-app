@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_planetas"
+            android:icon="@drawable/planeta"
+            android:title="Planetas"
+
+            android:checked="true"
+            />
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/planeta"
+            android:title="Informação sobre os Planetas"
+
+            />
+        <item
+            android:id="@+id/nav_localizacao"
+            android:icon="@drawable/planeta"
+            android:title="Localização dos Planetas"
+
+            />
+    </group>
+</menu>
