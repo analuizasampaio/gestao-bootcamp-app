@@ -1,7 +1,7 @@
 # gestao-bootcamp-app
 
 ## 👩‍💻 Grupo
-- Nome: Ana Luiza Sampaio RA: 2101183
+- Nome: Ana Luiza B Sampaio A RA: 2101183
 
 - Nome: Guilherme Portes Bebiano RA: 2101494
 
