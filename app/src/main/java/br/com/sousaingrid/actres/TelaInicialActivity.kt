@@ -1,13 +1,11 @@
 package br.com.sousaingrid.actres
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.view.MenuItemCompat
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ferfalk.simplesearchview.SimpleSearchView
@@ -18,7 +16,7 @@ import android.view.MenuItem as MenuItem
 
 
 class TelaInicialActivity : DebugActivity(),
-      NavigationView.OnNavigationItemSelectedListener {
+    NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,16 +40,25 @@ class TelaInicialActivity : DebugActivity(),
         recyclerPlanetas?.setHasFixedSize(true)
     }
 
-    private var planetas = listOf<Planetas>()
-    override fun onResume() {
-        super.onResume()
-        planetas = PlanetasService.getPlanetas()
-        recyclerPlanetas?.adapter = PlanetaAdapter(planetas) {
-            onClickPlaneta(it)
-        }
+    fun taskPlanetas(){
+        Thread {
+            planetas = PlanetasService.getPlanetas(this)
+
+            runOnUiThread{
+                recyclerPlanetas?.adapter = PlanetaAdapter(planetas) {
+                    onClickPlaneta(it)
+                }
+            }
+        }.start()
     }
 
-    fun onClickPlaneta(planeta: Planetas) {
+    private var planetas = listOf<Planeta>()
+    override fun onResume() {
+        super.onResume()
+        taskPlanetas()
+    }
+
+    fun onClickPlaneta(planeta: Planeta) {
         Toast.makeText(this, "Clicou na ${planeta.nome}", Toast.LENGTH_SHORT).show()
     }
 
@@ -80,20 +87,26 @@ class TelaInicialActivity : DebugActivity(),
         if (id == R.id.action_buscar) {
             Toast.makeText(this,
                 "Buscar",
-                  Toast.LENGTH_SHORT
+                Toast.LENGTH_SHORT
             ).show()
         } else if (id == R.id.action_atualizar){
             Toast.makeText(this,
-            "Atualizar",
-            Toast.LENGTH_SHORT).show()
+                "Atualizar",
+                Toast.LENGTH_SHORT).show()
         } else if (id == R.id.action_config){
             Toast.makeText(this,
-            "Configuração",
-            Toast.LENGTH_SHORT).show()
+                "Configuração",
+                Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this,ConfiguracoesActivity::class.java)
             startActivity(intent)
-        }else if (id == android.R.id.home){
+        }else if (id==R.id.action_adicionar) {
+            val intent = Intent(this, PlanetaCadastroActivity::class.java)
+            startActivity(intent)
+
+        }
+
+        else if (id == android.R.id.home){
             finish()
         }
 
@@ -102,18 +115,46 @@ class TelaInicialActivity : DebugActivity(),
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
-           R.id.nav_planetas ->{
-               Toast.makeText(this, "Planetas",
-                  Toast.LENGTH_SHORT).show()
-           }
-           R.id.nav_info -> {
-               Toast.makeText(this, "Informações",
-                   Toast.LENGTH_SHORT).show()
-           }
-           R.id.nav_localizacao ->{
-               Toast.makeText(this, "Localização",
-                   Toast.LENGTH_SHORT).show()
-           }
+            R.id.nav_mercurio ->{
+                Toast.makeText(this, "Mercurio",
+                    Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_venus -> {
+                Toast.makeText(this, "Venus",
+                    Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_terra -> {
+                Toast.makeText(this, "Terra",
+                    Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_marte -> {
+                Toast.makeText(this, "Marte",
+                    Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_jupiter -> {
+                Toast.makeText(this, "Jupiter",
+                    Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_saturno -> {
+                Toast.makeText(this, "Saturno",
+                    Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_urano -> {
+                Toast.makeText(this, "Urano",
+                    Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_netuno -> {
+                Toast.makeText(this, "Netuno",
+                    Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_plutao -> {
+                Toast.makeText(this, "Plutão",
+                    Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_localizacao ->{
+                Toast.makeText(this, "Localização",
+                    Toast.LENGTH_SHORT).show()
+            }
         }
         return true
     }
@@ -132,6 +173,6 @@ class TelaInicialActivity : DebugActivity(),
     }
 }
 
-private fun SimpleSearchView.setMenuItem(menuItem: List<Planetas>) {
+private fun SimpleSearchView.setMenuItem(menuItem: List<Planeta>) {
 
 }

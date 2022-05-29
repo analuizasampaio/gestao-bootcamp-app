@@ -2,16 +2,60 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_planetas"
+            android:id="@+id/nav_mercurio"
             android:icon="@drawable/planeta"
-            android:title="Planetas"
+            android:title="Mercurio"
 
             android:checked="true"
             />
         <item
-            android:id="@+id/nav_info"
+            android:id="@+id/nav_venus"
             android:icon="@drawable/planeta"
-            android:title="Informação sobre os Planetas"
+            android:title="Venus"
+
+            />
+        <item
+            android:id="@+id/nav_terra"
+            android:icon="@drawable/planeta"
+            android:title="Terra"
+
+            />
+        <item
+            android:id="@+id/nav_marte"
+            android:icon="@drawable/planeta"
+            android:title="Marte"
+
+            android:checked="true"
+            />
+        <item
+            android:id="@+id/nav_jupiter"
+            android:icon="@drawable/planeta"
+            android:title="jupiter"
+
+            />
+        <item
+            android:id="@+id/nav_saturno"
+            android:icon="@drawable/planeta"
+            android:title="Saturno"
+
+            />
+        <item
+            android:id="@+id/nav_urano"
+            android:icon="@drawable/planeta"
+            android:title="Urano"
+
+            android:checked="true"
+            />
+        <item
+            android:id="@+id/nav_netuno"
+            android:icon="@drawable/planeta"
+            android:title="Netuno"
+
+            />
+        <item
+            android:id="@+id/nav_plutao"
+            android:icon="@drawable/planeta"
+            android:title="Plutão"
 
             />
         <item

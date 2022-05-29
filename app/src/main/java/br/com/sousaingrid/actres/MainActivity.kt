@@ -1,37 +1,65 @@
 package br.com.sousaingrid.actres
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.login.*
 
 
 class MainActivity : DebugActivity() {
+
+    private val context: Context get() = this
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
         imagemLogin.setImageResource(R.drawable.imagem_login)
-        mensagemLogin.text = "Nova mensagem de Login"
 
-        botaoLogin.setOnClickListener{
+        var nomeUsuario = Prefs.getString("nome")
+        campoUsuario.setText(Prefs.getString("nome"))
+        campoSenha.setText(Prefs.getString("senha"))
+        lembrarSenha.isChecked = Prefs.getBoolean("lembrar")!!
 
-            val valorUsuario = campoUsuario.text.toString()
-            val senhaUsuario = campoSenha.text.toString()
-            Toast.makeText(this, "Nome do usuário: ${valorUsuario}", Toast.LENGTH_LONG).show()
+        texto_usuario.text ="Olá $nomeUsuario"
 
-            val intent = Intent(this, TelaInicialActivity::class.java)
-            val params = Bundle()
-            params.putString("usuario", valorUsuario)
-            params.putInt("n", 10)
-            params.putBoolean("bool", true)
 
-            intent.putExtras(params)
+            botaoLogin.setOnClickListener{onClickLogin() }
 
-            intent.putExtra("nome", "Ingrid Sousa")
 
-            startActivity(intent)
-        }
     }
-}
+
+    fun onClickLogin() {
+        val valorUsuario = campoUsuario.text.toString()
+        val valorSenha =  campoSenha.text.toString()
+
+        if (lembrarSenha.isChecked) {
+            Prefs.setString("nome", valorUsuario)
+            Prefs.setString("senha", valorSenha)
+        } else {
+            Prefs.setString("nome", "")
+            Prefs.setString("senha", "")
+        }
+
+        Prefs.setBoolean("lembrar", lembrarSenha.isChecked)
+
+        val intent = Intent(context, TelaInicialActivity::class.java)
+        val params = Bundle()
+        params.putString("nome", "Ingrid Sousa")
+        intent.putExtras(params)
+
+        intent.putExtra("numero", 10)
+
+
+
+        startActivityForResult(intent, 1)
+
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        val result = data?.getStringExtra("result")
+        Toast.makeText(context, "$result", Toast.LENGTH_LONG).show()
+    }
+    }

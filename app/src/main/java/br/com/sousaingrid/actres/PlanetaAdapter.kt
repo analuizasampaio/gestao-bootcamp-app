@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
 class PlanetaAdapter(
-    val planetas: List<Planetas>,
-    val onClick: (Planetas) -> Unit
+    val planetas: List<Planeta>,
+    val onClick: (Planeta) -> Unit
 ):RecyclerView.Adapter<PlanetaAdapter.PlanetasViewHolder>(){
    class PlanetasViewHolder(view: View):
            RecyclerView.ViewHolder(view) {
