@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".InfoMeteoroActivity">
+
+    <ImageView
+        android:id="@+id/img_infoMeteoro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/meteoro"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-56dp" />
+
+    <TextView
+        android:id="@+id/text_infoMeteoro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="                  Meteoro"
+        android:textColor="#AC1FA5"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="O meteoro é um fenômeno astronômico comumente visto no céu. Ele corresponde à entrada de fragmentos de rocha, oriundos de corpos celestes, na atmosfera terrestre. Os meteoros são fenômenos registrados aleatoriamente em diversas partes do globo."
+        android:textColor="#E9BDC9F4" />
+
+</LinearLayout>

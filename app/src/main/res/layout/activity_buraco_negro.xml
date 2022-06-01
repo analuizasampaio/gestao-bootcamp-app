@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    tools:context=".BuracoNegroActivity">
+
+    <ImageView
+        android:id="@+id/img_infoBuracoNegro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/buraconegro"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-56dp" />
+
+    <TextView
+        android:id="@+id/text_infoPlaneta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="             Buraco Negro"
+        android:textColor="#B57A05"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buracos negros são uma região do espaço com um campo gravitacional tão intenso que nem mesmo a luz consegue escapar de dentro dele. Depois de formados, a gravidade na região do buraco negro é tão forte que toda matéria atraída por ele é comprimida até ser destruída."
+        android:textColor="#E9BDC9F4" />
+
+</LinearLayout>

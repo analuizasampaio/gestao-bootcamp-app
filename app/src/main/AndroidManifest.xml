@@ -1,16 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.impacta.android.gestaoBootcampApp">
+    package="br.com.sousaingrid.actres">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".PLANETApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-        <activity android:name=".MainActivity"
+        android:theme="@style/Theme.ACtres">
+        <activity
+            android:name=".BuracoNegroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InfoMeteoroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InfoCometasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InfoAsteroidesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InfoEstrelasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InfoPlanetaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlanetaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TelaInicialActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ACtres.Toolbar" />
+        <activity
+            android:name=".PlanetaCadastroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfiguracoesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DebugActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +57,5 @@
             </intent-filter>
         </activity>
     </application>
-
 
 </manifest>

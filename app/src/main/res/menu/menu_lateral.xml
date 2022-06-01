@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_infoPlaneta"
+            android:icon="@drawable/planeta"
+            android:title="Planetas"
+
+            android:checked="true"
+            />
+        <item
+            android:id="@+id/nav_infoEstrelas"
+            android:icon="@drawable/planeta"
+            android:title="Estrelas"
+
+            />
+        <item
+            android:id="@+id/nav_infoAsteroides"
+            android:icon="@drawable/planeta"
+            android:title="Asteroides"
+
+            />
+        <item
+            android:id="@+id/nav_infoCometas"
+            android:icon="@drawable/planeta"
+            android:title="Cometas"
+
+            android:checked="true"
+            />
+        <item
+            android:id="@+id/nav_infoMeteoros"
+            android:icon="@drawable/planeta"
+            android:title="Meteoros"
+
+            />
+        <item
+            android:id="@+id/nav_infoBuracoNegro"
+            android:icon="@drawable/planeta"
+            android:title="Buraco Negro"
+
+            />
+
+    </group>
+</menu>

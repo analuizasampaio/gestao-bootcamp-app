@@ -1,49 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/planetasum"
+   >
 
     <TextView
-        android:id="@+id/texto_login"
+        android:id="@+id/texto_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/mensagem_login" />
+        android:text="@string/mensagem_login"
+        android:textSize="15sp"
+        android:textColor="@color/purple_700"/>
 
     <TextView
         android:id="@+id/texto_usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Usuário" />
+        android:textSize="15sp"
+        android:text="Usuário"
+        android:textColor="@color/purple_700"/>
 
     <EditText
-        android:id="@+id/campo_usuario"
+        android:id="@+id/campoUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Coloque seu Usuário"
+        android:inputType="textPersonName"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/texto_senha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Senha" />
+        android:textSize="20sp"
+        android:text="Senha"
+        android:textColor="@color/purple_700"/>
 
     <EditText
-        android:id="@+id/campo_senha"
+        android:id="@+id/campoSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:hint="Coloque sua Senha"
+        android:inputType="textPassword"
+        android:textColor="@color/white" />
+
+    <CheckBox
+        android:id="@+id/lembrarSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lembrar Senha"
+        android:textColor="@color/white" />
 
     <Button
-        android:id="@+id/botao_login"
+        android:id="@+id/botaoLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login" />
 
     <ImageView
-        android:id="@+id/campo_imagem"
+        android:id="@+id/imagemLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+
 </LinearLayout>
